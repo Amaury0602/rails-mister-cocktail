@@ -1,11 +1,19 @@
-<h1>Here's all your cocktails</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="container">
+    <h1>Here's a list of all your cocktails <strong>FEELS GOOD</strong> to <strong>DRINK</strong>!</h1>
+  </div>
+</div>
+<div class="container">
 
-<ul>
-<% @cocktails.each do |cocktail| %>
-  <li>
-    <%= link_to cocktail.name, cocktail_path(cocktail)  %>
-  </li>
-<% end %>
-</ul>
 
-<%= link_to "Add new cocktail", new_cocktail_path  %>
+
+  <ul>
+  <% @cocktails.each do |cocktail| %>
+    <li>
+      <%= link_to cocktail.name, cocktail_path(cocktail)  %>
+    </li>
+  <% end %>
+  </ul>
+
+  <%= link_to "Add new cocktail", new_cocktail_path  %>
+</div>
