@@ -1,20 +1,20 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i1.wp.com/www.rabbleboy.com/wp-content/uploads/2016/03/4.jpeg);">
   <div class="container">
     <h1>Here's a list of all your cocktails <strong>FEELS GOOD</strong> to <strong>DRINK</strong></h1>
+    <h4></h4>
   </div>
 </div>
 <div class="container">
 
+<div class="cards m-3">
+<% @cocktails.each do |cocktail| %>
 
-
-  <ul>
-  <% @cocktails.each do |cocktail| %>
-    <li>
-      <%= link_to cocktail.name, cocktail_path(cocktail)  %>
-      <%= cl_image_tag cocktail.photo, height: 300, width: 400 %>
-    </li>
-  <% end %>
-  </ul>
-
-  <%= link_to "Add new cocktail", new_cocktail_path  %>
+  <div class="card-category  text-white" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path(cocktail.photo, height: 300, width: 400, crop: :fill) %>')">
+    <%= link_to cocktail.name, cocktail_path(cocktail)  %>
+  </div>
+<% end %>
+<div class="card-category  text-white text-decoration-none">
+  <%= link_to "Add new cocktail", new_cocktail_path %>
 </div>
+</div>
+
