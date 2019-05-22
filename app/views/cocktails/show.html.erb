@@ -1,0 +1,27 @@
+<h1>Cocktail's informations</h1>
+
+<%= @cocktail.name %>
+<ul>
+<% @cocktail.doses.each do |dose| %>
+  <li>
+<%= dose.description %>
+<%= link_to "Destroy dose", cocktail_dose_path(@cocktail, dose),
+data: { confirm: 'Are you sure?'}, method: :delete %>
+  </li>
+<% end %>
+</ul>
+
+<ul>
+<% @cocktail.ingredients.each do |ingredient| %>
+  <li>
+<%= ingredient.name %>
+  </li>
+<% end %>
+</ul>
+
+<%= link_to "Cocktails list", cocktails_path  %>
+
+<%= link_to "Add dose", new_cocktail_dose_path(@cocktail)  %>
+
+<%= link_to 'Delete cocktail', cocktail_path,
+    data: { confirm: 'Are you sure?' }, method: :delete %>
