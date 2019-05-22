@@ -1,6 +1,7 @@
 <h1>Cocktail's informations</h1>
 
 <%= @cocktail.name %>
+<%= cl_image_tag @cocktail.photo, width: 400, height: 300 %>
 <ul>
 <% @cocktail.doses.each do |dose| %>
   <li>
